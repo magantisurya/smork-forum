@@ -1,0 +1,32 @@
+.validate-style {
+	position: relative;
+}
+
+.validate-style .form-control.error {
+	border-color: #e93e2c;
+}
+
+.validate-style label.error {
+	padding: 6px 12px;
+	color: #fff;
+	background: #e93e2c;
+	font-size: 13px !important;
+	border-radius: 4px;
+	position: absolute;
+	left: calc(100% + 15px);
+	display: inline-block;
+	width: auto;
+	top: 5px;
+	white-space: nowrap;
+	font-family: arial;
+}
+
+.validate-style label.error:before {
+	content: "";
+	position: absolute;
+	left: -9px;
+	top: 4px;
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+	border-right: 10px solid #e93e2c;
+}
