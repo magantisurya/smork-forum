@@ -90,6 +90,10 @@ $(function() {
 			});
 
 });
+$('#cats').on('click', 'a[href="data-categoryId"]', function() {
+	alert('fired')
+})
+
 function showLatestTopics(categoryId, latest, top, fromDate, toDate) {
 	latestTopicTable.ajax.url(
 			"/rest/topic?categoryId=" + categoryId + "&latest=" + latest
@@ -107,26 +111,31 @@ var latestTopicTable = $('#latestTopics').DataTable(
 									+ data.topicId + '">' + data.subject
 									+ '</a>'
 						}
-					}, {
+					},
+					{
 						data : null,
 						render : function(data) {
 							return "NA"
 						}
-					}, {
+					},
+					{
 						data : null,
 						render : function(data) {
 							return data.totalReplies
 						}
-					}, {
+					},
+					{
 						data : null,
 						render : function(data) {
 							return "NA"
 						}
-					}, {
+					},
+					{
 						data : null,
 						render : function(data) {
 							if (!!data.lastActivity)
 								return new Date(data.lastActivity)
+										.toLocaleString()
 							else
 								return "No activity"
 						}

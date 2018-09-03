@@ -38,4 +38,11 @@
 		});
 		return o;
 	};
+	$('span[data-date]').each(function(index, value) {
+		if (!!value)
+			$(this).text(new Date($(value).text()).toLocaleString())
+	});
+	$('.modal').on('hidden.bs.modal', function() {
+		$(this).find('input,textarea').val('');
+	})
 </script>

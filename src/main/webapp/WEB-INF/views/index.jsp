@@ -13,7 +13,7 @@
 	<div class="container">
 
 		<ul class="nav nav-tabs">
-			<li class="nav-item dropdown"><a
+			<li class="nav-item dropdown" id="cats"><a
 				class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">All
 					Categories</a>
 				<div class="dropdown-menu" id="categoriesDropDown"></div></li>

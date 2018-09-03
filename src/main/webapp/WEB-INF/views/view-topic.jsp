@@ -17,80 +17,53 @@
 		<div class="media user">
 			<img class="mr-3" src="" alt="profile" width="45px;" height="45px;">
 			<div class="media-body">
-				<h6 class="mt-0 mb-1"></h6>
+				<h4>
+					<span class="username"></span>&nbsp;&nbsp;&nbsp;&nbsp;<small><i>Posted
+							on <span data-date>${data.creationTime}</span>
+					</i></small>
+				</h4>
 				${data.content}
 			</div>
 		</div>
 		<hr>
+		<button class="reply mr-3" data-parent="0">
+			<i class="fa fa-reply"></i>
+		</button>
 		<br>
 		<hr>
+
 		<ul class="list-unstyled" id="replies">
-			<li class="media"><img class="mr-3" src="" alt="profile"
-				width="45px;" height="45px;">
-				<div class="media-body">
-					<h5 class="mt-0 mb-1">List-based media object</h5>
-					Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-					scelerisque ante sollicitudin. Cras purus odio, vestibulum in
-					vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi
-					vulputate fringilla. Donec lacinia congue felis in faucibus.
-				</div>
-				<div>
-					<a href="#addCategory" data-toggle="modal"
-						class="btn btn-primary float-sm-right" title="Add topic"><i
-						class="fa fa-plus"></i></a>
-				</div></li>
-			<li class="media my-4"><img class="mr-3" src="" alt="profile"
-				width="45px;" height="45px;">
-				<div class="media-body">
-					<h5 class="mt-0 mb-1">List-based media object</h5>
-					Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-					scelerisque ante sollicitudin. Cras purus odio, vestibulum in
-					vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi
-					vulputate fringilla. Donec lacinia congue felis in faucibus.
-				</div></li>
-			<li class="media"><img class="mr-3" src="" alt="profile"
-				width="45px;" height="45px;">
-				<div class="media-body">
-					<h5 class="mt-0 mb-1">List-based media object</h5>
-					Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-					scelerisque ante sollicitudin. Cras purus odio, vestibulum in
-					vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi
-					vulputate fringilla. Donec lacinia congue felis in faucibus.
-				</div></li>
 		</ul>
 	</div>
-	<jsp:include page="footer.jsp"></jsp:include>
 </body>
-<div class="modal fade" id="addCategory" tabindex="-1" role="dialog"
+<div class="modal fade" id="reply" tabindex="-1" role="dialog"
 	aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header text-center">
-				<h4 class="modal-title w-100 font-weight-bold">Add Category</h4>
+				<h4 class="modal-title w-100 font-weight-bold">Reply</h4>
 				<button type="button" class="close" data-dismiss="modal"
 					aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
 			</div>
-			<form action="#" id="addCategoryForm" method="post">
+			<form action="#" id="replyForm" method="post">
+				<input name="parentId" type="hidden"> <input name="topicId"
+					type="hidden" value="${data.topicId}">
 				<div class="modal-body mx-3">
 					<div class="md-form mb-5">
-						<label for="categoryName">Title</label> <input type="text"
-							name="categoryName" id="categoryName"
-							class="form-control validate-style">
-					</div>
-					<div class="md-form mb-5">
-						<label for="description"> Description</label>
-						<textarea name="description" class="form-control validate"> </textarea>
+						<textarea name="content" rows="4" class="form-control validate"> </textarea>
 					</div>
 				</div>
 				<div class="modal-footer d-flex justify-content-center">
-					<button class="btn btn-primary">Add</button>
+					<button class="btn btn-primary">Reply</button>
 				</div>
 			</form>
 		</div>
 	</div>
 
 </div>
+
+<jsp:include page="footer.jsp"></jsp:include>
 <script src="resources/js/view-topic.js"></script>
 </html>
